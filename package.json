@@ -2,7 +2,7 @@
   "name": "vue-pay-password",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/vue-payPassword.common.js",
+  "main": "dist/vue-pay-password.common.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vue serve examples/default.vue",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/limichange/v-cyhoi.git"
+    "url": "git+https://github.com/limichange/vue-pay-password.git"
   },
   "keywords": [
     "vue"
@@ -19,9 +19,9 @@
   "author": "limichange<limichange@hotmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/limichange/v-cyhoi/issues"
+    "url": "https://github.com/limichange/vue-pay-password/issues"
   },
-  "homepage": "https://github.com/limichange/v-cyhoi#readme",
+  "homepage": "https://github.com/limichange/vue-pay-password#readme",
   "dependencies": {
     "vue": "^2.5.13"
   },

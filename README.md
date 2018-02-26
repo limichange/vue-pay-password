@@ -1,4 +1,4 @@
-# v-payPassword
+# vue-pay-password
 
 ## Description
 

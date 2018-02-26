@@ -74,7 +74,7 @@ module.exports = __webpack_require__("jL/W");
 
 /***/ }),
 
-/***/ "Ml7d":
+/***/ "3bcB":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -206,8 +206,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     focus: function focus(e) {
       if (this.disable) {
-        e.preventDefault();
-        e.stopPropagation();
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+
         return false;
       }
 
@@ -223,7 +226,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-514beefb","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/payPassword.vue
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-9f79dcac","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/payPassword.vue
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"payPassword"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.val),expression:"val"}],ref:"input",staticClass:"sixDigitPassword",attrs:{"aria-disabled":_vm.disable,"type":"password","name":_vm.name,"autocomplete":"off","maxlength":_vm.length,"minlength":_vm.length},domProps:{"value":(_vm.val)},on:{"contextmenu":function () { return false; },"paste":function () { return false; },"copy":function () { return false; },"cut":function () { return false; },"blur":_vm.blur,"input":function($event){if($event.target.composing){ return; }_vm.val=$event.target.value}}}),_vm._v(" "),_c('div',{staticClass:"sixDigitPassword",attrs:{"tabindex":_vm.tabindex},on:{"focus":_vm.focus}},[_vm._l((_vm.length),function(index,i){return _c('i',{key:i},[_c('b',{directives:[{name:"show",rawName:"v-show",value:(index <= _vm.val.length),expression:"index <= val.length"}]})])}),_vm._v(" "),_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.status === _vm.MODE.FOCUS),expression:"status === MODE.FOCUS"}],style:(_vm.inputStyle)})],2)])}
 var staticRenderFns = []
 
@@ -332,7 +335,7 @@ function normalizeComponent (
 
 // CONCATENATED MODULE: ./src/payPassword.vue
 function injectStyle (context) {
-  __webpack_require__("Ml7d")
+  __webpack_require__("3bcB")
 }
 /* script */
 
@@ -369,4 +372,4 @@ var Component = normalizeComponent(
 /***/ })
 
 /******/ })["default"];
-//# sourceMappingURL=vue-payPassword.common.js.map
+//# sourceMappingURL=vue-pay-password.common.js.map

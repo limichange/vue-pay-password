@@ -118,8 +118,10 @@ export default {
     },
     focus (e) {
       if (this.disable) {
-        e.preventDefault()
-        e.stopPropagation()
+        if (e) {
+          e.preventDefault()
+          e.stopPropagation()
+        }
         return false
       }
 

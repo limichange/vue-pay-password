@@ -8,9 +8,9 @@ https://codesandbox.io/s/53r20qn9yk
 ## Install
 
 ```shell
-$ npm i v-pay-password --save
+$ npm i vue-pay-password --save
 // or
-$ yarn add v-pay-password
+$ yarn add vue-pay-password
 ```
 
 ## Usage

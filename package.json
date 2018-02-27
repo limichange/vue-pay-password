@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/vue-pay-password.common.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "vue serve examples/default.vue",
     "build": "vue build src/payPassword.vue --target lib",
     "fuck": "rm -rf node_modules && npm i"
@@ -34,8 +34,12 @@
     "@vue/eslint-config-standard": "^3.0.0-beta.1",
     "@vue/test-utils": "^1.0.0-beta.12",
     "babel-jest": "^22.4.1",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.4.2",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "vue-jest": "^1.4.0",
+    "vue-server-renderer": "^2.5.13",
     "vue-template-compiler": "^2.5.13"
   },
   "eslintConfig": {
@@ -54,5 +58,45 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ]
+    ],
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ]
+  }
 }

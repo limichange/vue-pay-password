@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import payPassword from '../src/payPassword'
+import payPassword from '../src/PayPassword'
 
 export default {
   name: 'DefaultExample',

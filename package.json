@@ -12,7 +12,7 @@
   "scripts": {
     "test": "jest",
     "dev": "vue serve examples/default.vue",
-    "build": "vue build src/payPassword.vue --target lib",
+    "build": "vue build src/PayPassword.vue --target lib",
     "fuck": "rm -rf node_modules && npm i"
   },
   "repository": {

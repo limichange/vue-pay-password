@@ -7,10 +7,18 @@ https://codesandbox.io/s/53r20qn9yk
 
 ## Install
 
+### Terminal
 ```shell
 $ npm i vue-pay-password --save
 // or
 $ yarn add vue-pay-password
+```
+
+### CDN
+
+```html
+<link rel="stylesheet" herf="https://unpkg.com/vue-pay-password@0.0.2/dist/vue-pay-password.css">
+<script src="https://unpkg.com/vue-pay-password@0.0.2/dist/vue-pay-password.umd.min.js" />
 ```
 
 ## Usage

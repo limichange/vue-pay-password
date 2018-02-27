@@ -13,6 +13,27 @@ $ npm i v-pay-password --save
 $ yarn add v-pay-password
 ```
 
+## Usage
+```html
+<template>
+  <div id="app">
+    <payPassword />
+  </div>
+</template>
+
+<script>
+import payPassword from "vue-pay-password";
+import "vue-pay-password/dist/vue-pay-password.css";
+
+export default {
+  name: "App",
+  components: {
+    payPassword
+  }
+};
+</script>
+```
+
 ## Prop
 
 | Name         | Type      | Description              |

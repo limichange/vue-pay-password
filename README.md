@@ -74,7 +74,7 @@ $ npm test
 
 ## Author
 
-Copyright (c) 2013-present, limichange
+Copyright (c) 2018-present, limichange
 
 ## Licensing
 

@@ -5,6 +5,10 @@
   "main": "dist/vue-pay-password.common.js",
   "unpkg": "dist/vue-pay-password.umd.min.js",
   "jsdelivr": "dist/vue-pay-password.umd.min.js",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "dev": "vue serve examples/default.vue",

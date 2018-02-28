@@ -44,13 +44,13 @@ export default {
 
 ## Prop
 
-| Name         | Type      | Description              |
-|--------------|-----------|--------------------------|
-| name         | string    | input name               |
-| tabindex     | number    | input tabindex           |
-| length       | number    | input value length       |
-| value        | string    | default input value      |
-| disable      | boolean   | disable input            |
+| Name         | Type      | Default      | Description              |
+|--------------|-----------|--------------|--------------------------|
+| name         | string    | ''           | input name               |
+| tabindex     | number    | 0            | input tabindex           |
+| length       | number    | 6            | input value length       |
+| value        | string    | ''           | default input value      |
+| disable      | boolean   | false        | disable input            |
 
 ## API
 

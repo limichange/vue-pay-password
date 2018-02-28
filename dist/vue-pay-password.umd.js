@@ -78,25 +78,135 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("jL/W");
+module.exports = __webpack_require__("lVK7");
 
 
 /***/ }),
 
-/***/ "3bcB":
+/***/ "DIVP":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__("UKM+");
+module.exports = function (it) {
+  if (!isObject(it)) throw TypeError(it + ' is not an object!');
+  return it;
+};
+
+
+/***/ }),
+
+/***/ "EuXz":
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__("lDLk").f;
+var FProto = Function.prototype;
+var nameRE = /^\s*function ([^ (]*)/;
+var NAME = 'name';
+
+// 19.2.4.2 name
+NAME in FProto || __webpack_require__("bUqO") && dP(FProto, NAME, {
+  configurable: true,
+  get: function () {
+    try {
+      return ('' + this).match(nameRE)[1];
+    } catch (e) {
+      return '';
+    }
+  }
+});
+
+
+/***/ }),
+
+/***/ "OzIq":
+/***/ (function(module, exports) {
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self
+  // eslint-disable-next-line no-new-func
+  : Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
+
+/***/ }),
+
+/***/ "UKM+":
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+
+
+/***/ }),
+
+/***/ "bUqO":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__("zgIt")(function () {
+  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+
+/***/ "hHkU":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ "jL/W":
+/***/ "jhxf":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__("UKM+");
+var document = __webpack_require__("OzIq").document;
+// typeof document.createElement is 'object' in old IE
+var is = isObject(document) && isObject(document.createElement);
+module.exports = function (it) {
+  return is ? document.createElement(it) : {};
+};
+
+
+/***/ }),
+
+/***/ "lDLk":
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__("DIVP");
+var IE8_DOM_DEFINE = __webpack_require__("xZa+");
+var toPrimitive = __webpack_require__("s4j0");
+var dP = Object.defineProperty;
+
+exports.f = __webpack_require__("bUqO") ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if (IE8_DOM_DEFINE) try {
+    return dP(O, P, Attributes);
+  } catch (e) { /* empty */ }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+
+
+/***/ }),
+
+/***/ "lVK7":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/limichange/limiCode/vue-payPassword/node_modules/.cache/cache-loader"}!./node_modules/babel-loader/lib?{"presets":["/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/@vue/babel-preset-app/index.js"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/payPassword.vue
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
+var es6_function_name = __webpack_require__("EuXz");
+var es6_function_name_default = /*#__PURE__*/__webpack_require__.n(es6_function_name);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/limichange/limiCode/vue-payPassword/node_modules/.cache/cache-loader"}!./node_modules/babel-loader/lib?{"presets":["/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/@vue/babel-preset-app/index.js"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/PayPassword.vue
 //
 //
 //
@@ -130,7 +240,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-/* harmony default export */ var payPassword = ({
+/* harmony default export */ var PayPassword = ({
   name: 'PayPasswrod',
   props: {
     value: {
@@ -235,7 +345,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-9f79dcac","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/payPassword.vue
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-7281646c","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/PayPassword.vue
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"payPassword"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.val),expression:"val"}],ref:"input",staticClass:"sixDigitPassword",attrs:{"aria-disabled":_vm.disable,"type":"password","name":_vm.name,"autocomplete":"off","maxlength":_vm.length,"minlength":_vm.length},domProps:{"value":(_vm.val)},on:{"contextmenu":function () { return false; },"paste":function () { return false; },"copy":function () { return false; },"cut":function () { return false; },"blur":_vm.blur,"input":function($event){if($event.target.composing){ return; }_vm.val=$event.target.value}}}),_vm._v(" "),_c('div',{staticClass:"sixDigitPassword",attrs:{"tabindex":_vm.tabindex},on:{"focus":_vm.focus}},[_vm._l((_vm.length),function(index,i){return _c('i',{key:i},[_c('b',{directives:[{name:"show",rawName:"v-show",value:(index <= _vm.val.length),expression:"index <= val.length"}]})])}),_vm._v(" "),_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.status === _vm.MODE.FOCUS),expression:"status === MODE.FOCUS"}],style:(_vm.inputStyle)})],2)])}
 var staticRenderFns = []
 
@@ -342,9 +452,9 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: ./src/payPassword.vue
+// CONCATENATED MODULE: ./src/PayPassword.vue
 function injectStyle (context) {
-  __webpack_require__("3bcB")
+  __webpack_require__("hHkU")
 }
 /* script */
 
@@ -361,7 +471,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 
 var Component = normalizeComponent(
-  payPassword,
+  PayPassword,
   render,
   staticRenderFns,
   __vue_template_functional__,
@@ -370,12 +480,63 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 
-/* harmony default export */ var src_payPassword = (Component.exports);
+/* harmony default export */ var src_PayPassword = (Component.exports);
 
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+// CONCATENATED MODULE: ./src/index.js
 
 
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src_payPassword);
+
+src_PayPassword.install = function (Vue) {
+  Vue.component(src_PayPassword.name, src_PayPassword);
+};
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(src_PayPassword);
+}
+
+/* harmony default export */ var src = __webpack_exports__["default"] = (src_PayPassword);
+
+/***/ }),
+
+/***/ "s4j0":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.1 ToPrimitive(input [, PreferredType])
+var isObject = __webpack_require__("UKM+");
+// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+// and the second argument - flag - preferred type is a string
+module.exports = function (it, S) {
+  if (!isObject(it)) return it;
+  var fn, val;
+  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  throw TypeError("Can't convert object to primitive value");
+};
+
+
+/***/ }),
+
+/***/ "xZa+":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = !__webpack_require__("bUqO") && !__webpack_require__("zgIt")(function () {
+  return Object.defineProperty(__webpack_require__("jhxf")('div'), 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+
+/***/ "zgIt":
+/***/ (function(module, exports) {
+
+module.exports = function (exec) {
+  try {
+    return !!exec();
+  } catch (e) {
+    return true;
+  }
+};
 
 
 /***/ })

@@ -17,8 +17,8 @@ $ yarn add vue-pay-password
 ### CDN
 
 ```html
-<link rel="stylesheet" herf="https://unpkg.com/vue-pay-password@0.0.2/dist/vue-pay-password.css">
-<script src="https://unpkg.com/vue-pay-password@0.0.2/dist/vue-pay-password.umd.min.js" />
+<link rel="stylesheet" herf="https://unpkg.com/vue-pay-password/dist/vue-pay-password.css">
+<script src="https://unpkg.com/vue-pay-password/dist/vue-pay-password.umd.min.js" />
 ```
 
 ## Usage

@@ -51,6 +51,7 @@ export default {
 | length       | number    | 6            | input value length       |
 | value        | string    | ''           | default input value      |
 | disable      | boolean   | false        | disable input            |
+| onlyNumber   | boolean   | true         | only allow input number  |
 
 ## API
 

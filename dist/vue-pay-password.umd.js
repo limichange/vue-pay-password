@@ -152,13 +152,6 @@ module.exports = !__webpack_require__("zgIt")(function () {
 
 /***/ }),
 
-/***/ "hHkU":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "jhxf":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -206,7 +199,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var es6_function_name = __webpack_require__("EuXz");
 var es6_function_name_default = /*#__PURE__*/__webpack_require__.n(es6_function_name);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/limichange/limiCode/vue-payPassword/node_modules/.cache/cache-loader"}!./node_modules/babel-loader/lib?{"presets":["/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/@vue/babel-preset-app/index.js"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/PayPassword.vue
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/limichange/limiCode/vue-payPassword/node_modules/.cache/cache-loader"}!./node_modules/babel-loader/lib?{"presets":["/usr/local/lib/node_modules/@vue/cli-service-global/node_modules/@vue/babel-preset-app/index.js"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/PayPassword.vue
+//
 //
 //
 //
@@ -243,6 +237,10 @@ var es6_function_name_default = /*#__PURE__*/__webpack_require__.n(es6_function_
 /* harmony default export */ var PayPassword = ({
   name: 'PayPasswrod',
   props: {
+    onlyNumber: {
+      type: Boolean,
+      default: true
+    },
     value: {
       type: String,
       default: ''
@@ -308,6 +306,17 @@ var es6_function_name_default = /*#__PURE__*/__webpack_require__.n(es6_function_
     this.step = (this.$el.offsetWidth - 2) / this.length;
   },
   methods: {
+    keydown: function keydown(e) {
+      if (!this.onlyNumber) {
+        return;
+      }
+
+      var key = e.charCode || e.keyCode || 0;
+
+      if (!(key == 8 || key == 9 || key == 46 || key == 110 || key == 190 || key >= 35 && key <= 40 || key >= 48 && key <= 57 || key >= 96 && key <= 105)) {
+        e.preventDefault();
+      }
+    },
     updateVal: function updateVal(value) {
       if (this.val === value || value.length > this.length) {
         return;
@@ -345,8 +354,8 @@ var es6_function_name_default = /*#__PURE__*/__webpack_require__.n(es6_function_
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-7281646c","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/PayPassword.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"payPassword"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.val),expression:"val"}],ref:"input",staticClass:"sixDigitPassword",attrs:{"aria-disabled":_vm.disable,"type":"password","name":_vm.name,"autocomplete":"off","maxlength":_vm.length,"minlength":_vm.length},domProps:{"value":(_vm.val)},on:{"contextmenu":function () { return false; },"paste":function () { return false; },"copy":function () { return false; },"cut":function () { return false; },"blur":_vm.blur,"input":function($event){if($event.target.composing){ return; }_vm.val=$event.target.value}}}),_vm._v(" "),_c('div',{staticClass:"sixDigitPassword",attrs:{"tabindex":_vm.tabindex},on:{"focus":_vm.focus}},[_vm._l((_vm.length),function(index,i){return _c('i',{key:i},[_c('b',{directives:[{name:"show",rawName:"v-show",value:(index <= _vm.val.length),expression:"index <= val.length"}]})])}),_vm._v(" "),_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.status === _vm.MODE.FOCUS),expression:"status === MODE.FOCUS"}],style:(_vm.inputStyle)})],2)])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-06914a71","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/PayPassword.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"payPassword"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.val),expression:"val"}],ref:"input",staticClass:"sixDigitPassword",attrs:{"aria-disabled":_vm.disable,"type":"password","name":_vm.name,"autocomplete":"off","maxlength":_vm.length,"minlength":_vm.length},domProps:{"value":(_vm.val)},on:{"keydown":_vm.keydown,"contextmenu":function () { return false; },"paste":function () { return false; },"copy":function () { return false; },"cut":function () { return false; },"blur":_vm.blur,"input":function($event){if($event.target.composing){ return; }_vm.val=$event.target.value}}}),_vm._v(" "),_c('div',{staticClass:"sixDigitPassword",attrs:{"tabindex":_vm.tabindex},on:{"focus":_vm.focus}},[_vm._l((_vm.length),function(index,i){return _c('i',{key:i},[_c('b',{directives:[{name:"show",rawName:"v-show",value:(index <= _vm.val.length),expression:"index <= val.length"}]})])}),_vm._v(" "),_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.status === _vm.MODE.FOCUS),expression:"status === MODE.FOCUS"}],style:(_vm.inputStyle)})],2)])}
 var staticRenderFns = []
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/component-normalizer.js
@@ -454,7 +463,7 @@ function normalizeComponent (
 
 // CONCATENATED MODULE: ./src/PayPassword.vue
 function injectStyle (context) {
-  __webpack_require__("hHkU")
+  __webpack_require__("nQUG")
 }
 /* script */
 
@@ -495,6 +504,13 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 /* harmony default export */ var src = __webpack_exports__["default"] = (src_PayPassword);
+
+/***/ }),
+
+/***/ "nQUG":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

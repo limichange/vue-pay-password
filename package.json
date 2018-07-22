@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/limichange/vue-pay-password#readme",
   "dependencies": {
+    "is-directory": "^0.3.1",
     "vue": "^2.5.13"
   },
   "devDependencies": {

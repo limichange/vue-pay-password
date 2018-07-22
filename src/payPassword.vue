@@ -7,6 +7,7 @@
       type="password"
       :name="name"
       class="sixDigitPassword"
+      @keydown="keydown"
       @contextmenu="() => false"
       @paste="() => false"
       @copy="() => false"
@@ -35,6 +36,10 @@
 export default {
   name: 'PayPasswrod',
   props: {
+    onlyNumber: {
+      type: Boolean,
+      default: true
+    },
     value: {
       type: String,
       default: ''
@@ -100,6 +105,26 @@ export default {
     this.step = (this.$el.offsetWidth - 2) / this.length
   },
   methods: {
+    keydown (e) {
+      if (!this.onlyNumber) {
+        return
+      }
+
+      const key = e.charCode || e.keyCode || 0
+
+      if (!(
+        key == 8 ||
+        key == 9 ||
+        key == 46 ||
+        key == 110 ||
+        key == 190 ||
+        (key >= 35 && key <= 40) ||
+        (key >= 48 && key <= 57) ||
+        (key >= 96 && key <= 105)
+      )) {
+        e.preventDefault()
+      }
+    },
     updateVal (value) {
       if (this.val === value || value.length > this.length) {
         return
